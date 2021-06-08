@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Teleport Effect 1
+  m_Shader: {fileID: -6465566751694194690, guid: 0b9573f46348def47b07e389c8bcf51c,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_CFC4C516:
+        m_Texture: {fileID: 2800000, guid: ab209fbda6f61124f8224bc6e206e26c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_80494343: 25
+    - Vector1_943B1244: 0.5
+    - Vector1_D926CC99: 0
+    m_Colors:
+    - Color_1B914216: {r: 1, g: 0.7216981, b: 0.7216981, a: 1}
+    - Color_38262ABE: {r: 1, g: 1, b: 1, a: 1}
