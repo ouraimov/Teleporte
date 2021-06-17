@@ -24,6 +24,9 @@ namespace Game
             if (collision.transform.tag == "Player")
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
+            } else
+            {
+                Destroy(collision.gameObject);
             }
         }
 
