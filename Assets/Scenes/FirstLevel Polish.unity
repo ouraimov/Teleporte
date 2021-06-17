@@ -16677,7 +16677,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  lives: 3
+  lives: 5
+  rb: {fileID: 1184732054}
+  startPos: {x: 0, y: 0, z: 0}
   teleportSource: {fileID: 1735816758}
 --- !u!212 &1184732056
 SpriteRenderer:

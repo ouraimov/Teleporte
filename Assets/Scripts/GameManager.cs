@@ -15,7 +15,6 @@ namespace Game
         public static Transform player = null;
 
         private List<EnemyAI> enemies;                            //List of all Enemy units, used to issue them move commands.
-        private List<Vector3> enemyLoc;
         //private bool enemiesMoving;								//Boolean to check if enemies are moving.
         private bool doingSetup = true;                         //Boolean to check if we're setting up board, prevent Player from moving during setup.
 
@@ -47,8 +46,6 @@ namespace Game
 
             //Assign enemies to a new List of Enemy objects.
             enemies = new List<EnemyAI>();
-            enemyLoc = new List<Vector3>();
-
 
             playerObj = GameObject.FindGameObjectWithTag("Player");
             player = playerObj.transform;
@@ -80,24 +77,20 @@ namespace Game
 
                 //If any of these are true, return and do not start MoveEnemies.
                 return;
-            
 
         }
 
         //Call this to add the passed in Enemy to the List of Enemy objects.
-        public void AddEnemyToList(EnemyAI script, Vector3 pos)
+        public void AddEnemyToList(EnemyAI script)
         {
             //Add Enemy to List enemies.
             enemies.Add(script);
-            enemyLoc.Add(pos);
         }
         public void RestartEnemies()
         {
-            
-            for (int i = 0; i < enemies.Count; i++)
+            foreach (EnemyAI i in enemies)
             {
-                EnemyAI current = enemies[i];
-                current.Restart(enemyLoc[i]);
+                i.Restart();
             }
         }
 

@@ -9,6 +9,7 @@ namespace Game
         public Transform player;
         private Vector2 direction;
         private UnityEngine.AI.NavMeshAgent agent;
+        public Vector3 startPos;
 
         void Start()
         {
@@ -19,8 +20,8 @@ namespace Game
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
             agent.destination = transform.position;
-
-            GameManager.instance.AddEnemyToList(this, transform.position);
+            startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            GameManager.instance.AddEnemyToList(this);
         }
 
         void Update()
@@ -51,9 +52,9 @@ namespace Game
             }
         }
 
-        public void Restart(Vector3 pos)
+        public void Restart()
         {
-            transform.position = pos;
+            transform.position = startPos;
         }
     }
 }
