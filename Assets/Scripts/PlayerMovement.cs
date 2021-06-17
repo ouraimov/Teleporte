@@ -101,6 +101,7 @@ namespace Game
                 transform.position = START_POS;
                 teleportSource.Play();
                 teleportCooldown = 0.0f;
+                GameManager.instance.RestartEnemies();
             }
             else
             {

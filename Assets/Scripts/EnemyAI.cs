@@ -6,7 +6,7 @@ namespace Game
 {
     public class EnemyAI : MonoBehaviour
     {
-        public float speed;
+        public float speed = 2.5f;
         public Transform player;
         private Vector2 direction;
 
@@ -18,12 +18,11 @@ namespace Game
             agent.updateRotation = false;
             agent.updateUpAxis = false;
 
-            speed = 2.5f;
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
             agent.destination = transform.position;
 
-            GameManager.instance.AddEnemyToList(this);
+            GameManager.instance.AddEnemyToList(this, transform.position);
         }
 
         void Update()
@@ -38,6 +37,9 @@ namespace Game
             if(dist <= 8f)
             {
                 agent.destination = player.position;
+            } else
+            {
+                agent.destination = transform.position;
             }
             
         }
@@ -49,6 +51,11 @@ namespace Game
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
             }
+        }
+
+        public void Restart(Vector3 pos)
+        {
+            transform.position = pos;
         }
     }
 }
