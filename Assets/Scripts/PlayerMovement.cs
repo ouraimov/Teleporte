@@ -4,41 +4,36 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(CircleCollider2D))]
+    
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField]
-        private float speed =3.0f;
-        private Rigidbody2D rigidbody2D;
-        private CircleCollider2D collider;
-        private Material material;
+        public float speed = 3.0f;
+        public int lives = 5;
+        public Rigidbody2D rb;
+        public Vector3 startPos;
 
         private Vector2 direction;
+
         private bool teleport;
         private bool teleportedLastFrame;
-        private const float TELEPORT_DISTANCE = 3.0f;
-
+        private const float teleportDistance = 3.0f;
         private float teleportCooldown = 3.0f;
         private float dissolveAmount = 0.0f;
-        private float startDissolve = 0.0f;
-        private float endDissolve = 1.0f;
-
-        private Vector3 START_POS;
+        //private float startDissolve = 0.0f;
+        //private float endDissolve = 1.0f;
 
         private Animator animator;
-
-        public int lives;
-
+        private Material material;
+        
         [SerializeField]
         private AudioSource teleportSource;
 
         private bool CanTeleport()
         {
-            Vector2 location = transform.position + (new Vector3(direction.normalized.x, direction.normalized.y, 0.0f) * TELEPORT_DISTANCE);
+            Vector2 location = transform.position + (new Vector3(direction.normalized.x, direction.normalized.y, 0.0f) * teleportDistance);
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, TELEPORT_DISTANCE, LayerMask.GetMask("No Teleport")); Debug.DrawRay(transform.position, (direction.normalized * TELEPORT_DISTANCE), Color.green, 5.0f);
-            Debug.DrawRay(transform.position, (direction.normalized * TELEPORT_DISTANCE), Color.green, 5.0f);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, teleportDistance, LayerMask.GetMask("No Teleport")); Debug.DrawRay(transform.position, (direction.normalized * teleportDistance), Color.green, 5.0f);
+            Debug.DrawRay(transform.position, (direction.normalized * teleportDistance), Color.green, 5.0f);
 
             if (hit.collider != null)
             {
@@ -58,9 +53,7 @@ namespace Game
             animator = GetComponent<Animator>();
             material = GetComponent<Renderer>().sharedMaterial;
 
-            START_POS = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
-            lives = 5;
+            startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
 
         // Update is called once per frame
@@ -81,15 +74,15 @@ namespace Game
                 teleport = false;
                 teleportCooldown = 0f;
             }
-            else
-            {
-                Move();
-            }
 
             material.SetFloat("Vector1_D926CC99", Mathf.Lerp(dissolveAmount, 0.0f, teleportCooldown));
             teleportedLastFrame = teleport;
             teleportCooldown += Time.deltaTime;
             
+        }
+        void FixedUpdate()
+        {
+            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
         }
 
         public void Restart()
@@ -98,7 +91,7 @@ namespace Game
             if(lives > 0)
             {
                 dissolveAmount = 1.00f;
-                transform.position = START_POS;
+                transform.position = startPos;
                 teleportSource.Play();
                 teleportCooldown = 0.0f;
                 GameManager.instance.RestartEnemies();
@@ -109,42 +102,17 @@ namespace Game
             }
         }
 
-        private void Move()
-        {
-            transform.Translate(direction * speed * Time.deltaTime);
-            
-        }
-
         private void MoveTeleport()
         {
-            transform.Translate(direction.normalized * TELEPORT_DISTANCE);
+            transform.Translate(direction.normalized * teleportDistance);
             teleportSource.Play();
         }
 
         private void TakeInput()
         {
-            direction = Vector2.zero;
-
-            if(Input.GetKey(KeyCode.W))
-            {
-                direction += Vector2.up;
-            }
-            if(Input.GetKey(KeyCode.A))
-            {
-                direction += Vector2.left;
-            }
-            if(Input.GetKey(KeyCode.S))
-            {
-                direction += Vector2.down;
-            }
-            if(Input.GetKey(KeyCode.D))
-            {
-                direction += Vector2.right;
-            }
-
+            direction.x = Input.GetAxisRaw("Horizontal");
+            direction.y = Input.GetAxisRaw("Vertical");
             teleport = Input.GetKey(KeyCode.Space);
         }
-        
-
     }
 }

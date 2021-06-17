@@ -6,10 +6,8 @@ namespace Game
 {
     public class EnemyAI : MonoBehaviour
     {
-        public float speed = 2.5f;
         public Transform player;
         private Vector2 direction;
-
         private UnityEngine.AI.NavMeshAgent agent;
 
         void Start()
