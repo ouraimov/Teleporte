@@ -26,7 +26,7 @@ namespace Game
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
             } else
             {
-                Destroy(collision.gameObject);
+                collision.gameObject.GetComponent<OrcAI>().Deletus();
             }
         }
 

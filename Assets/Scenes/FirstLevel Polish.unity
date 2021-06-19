@@ -226,7 +226,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533, type: 3}
 --- !u!1 &38588255
 GameObject:
@@ -7012,7 +7013,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 1ebb41c18f19bf1408a227fddd8f36bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ebb41c18f19bf1408a227fddd8f36bd, type: 3}
 --- !u!1 &100933635
 GameObject:
@@ -8222,7 +8224,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 8eb25b763ca029f4da34baf578b12faf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8eb25b763ca029f4da34baf578b12faf, type: 3}
 --- !u!1 &221555499
 GameObject:
@@ -8371,6 +8374,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &265979445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265979441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &337662186
 GameObject:
   m_ObjectHideFlags: 0
@@ -8593,7 +8610,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533, type: 3}
 --- !u!1 &392341209
 GameObject:
@@ -10194,7 +10212,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 1ebb41c18f19bf1408a227fddd8f36bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ebb41c18f19bf1408a227fddd8f36bd, type: 3}
 --- !u!1 &778233913
 GameObject:
@@ -10439,6 +10458,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &792291583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792291579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &792794062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3736255390768952850, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533,
@@ -10452,7 +10485,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792794062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a964435eb3c81449845b8b06458f56f, type: 3}
   m_Name: 
@@ -10641,7 +10674,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533, type: 3}
 --- !u!1 &861033210
 GameObject:
@@ -12763,6 +12797,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1024300668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024300664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1040702948
 GameObject:
   m_ObjectHideFlags: 0
@@ -16535,6 +16583,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1111612426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111612422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1115175330
 GameObject:
   m_ObjectHideFlags: 0
@@ -16992,7 +17054,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736255390768952849, guid: 8eb25b763ca029f4da34baf578b12faf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8eb25b763ca029f4da34baf578b12faf, type: 3}
 --- !u!1 &1324408167
 GameObject:
@@ -18145,6 +18208,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1714053744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714053740}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1735816757
 GameObject:
   m_ObjectHideFlags: 0
@@ -18299,6 +18376,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1777940597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777940593}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1784496886
 GameObject:
   m_ObjectHideFlags: 0
