@@ -10,6 +10,8 @@ namespace Game
         private Vector2 direction;
         private UnityEngine.AI.NavMeshAgent agent;
         public Vector3 startPos;
+        private bool dead;
+        private Renderer rend;
 
         void Start()
         {
@@ -22,12 +24,14 @@ namespace Game
             agent.destination = transform.position;
             startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             GameManager.instance.AddEnemyToList(this);
+            dead = false;
+            rend = GetComponent<Renderer>();
         }
 
         void Update()
         {
 
-            if(GameManager.instance.GameIsOver() || !GameManager.instance.GameMove())
+            if(GameManager.instance.GameIsOver() || !GameManager.instance.GameMove() || dead)
             {
                 return;
             }
@@ -55,11 +59,15 @@ namespace Game
         public void Restart()
         {
             transform.position = startPos;
+            dead = false;
+            rend.enabled = true;
         }
 
         public void Deletus()
         {
-            transform.position = new Vector3(100,100,0);
+            dead = true;
+            agent.destination = transform.position;
+            rend.enabled = false;
         }
     }
 }
