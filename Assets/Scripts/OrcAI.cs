@@ -12,6 +12,7 @@ namespace Game
         public Vector3 startPos;
         private bool dead;
         private Renderer rend;
+        private BoxCollider2D col;
 
         void Start()
         {
@@ -26,6 +27,7 @@ namespace Game
             GameManager.instance.AddEnemyToList(this);
             dead = false;
             rend = GetComponent<Renderer>();
+            col = GetComponent<BoxCollider2D>();
         }
 
         void Update()
@@ -50,7 +52,7 @@ namespace Game
         public void OnCollisionEnter2D(Collision2D collision)
         {
             Debug.Log(collision.transform.tag);
-            if (collision.transform.tag == "Player")
+            if (collision.transform.tag == "Player" )
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
             }
@@ -61,6 +63,7 @@ namespace Game
             transform.position = startPos;
             dead = false;
             rend.enabled = true;
+            col.enabled = true;
         }
 
         public void Deletus()
@@ -68,6 +71,8 @@ namespace Game
             dead = true;
             agent.destination = transform.position;
             rend.enabled = false;
+            col.enabled = false;
+            print("yup");
         }
     }
 }
