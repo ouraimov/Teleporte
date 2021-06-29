@@ -6,6 +6,7 @@ namespace Game
 {
     public class OrcAI : MonoBehaviour, IEnemyAI
     {
+        public float awareness = 8;
         public Transform player;
         private Vector2 direction;
         private UnityEngine.AI.NavMeshAgent agent;
@@ -39,7 +40,7 @@ namespace Game
             }
 
             float dist = (player.position - transform.position).magnitude;
-            if(dist <= 8f)
+            if(dist <= awareness)
             {
                 agent.destination = player.position;
             } else

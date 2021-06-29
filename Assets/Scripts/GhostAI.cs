@@ -7,6 +7,7 @@ namespace Game
     public class GhostAI : MonoBehaviour, IEnemyAI
     {
         public float speed = 2.0f;
+        public float awareness = 8.0f;
         public Rigidbody2D rb;
 
         public Transform player;
@@ -35,7 +36,7 @@ namespace Game
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
             }
-            if(dist <= 8f)
+            if(dist <= awareness)
             {
                 direction = new Vector2((player.position.x - transform.position.x) / dist , (player.position.y - transform.position.y) /dist);
             }
