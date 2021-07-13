@@ -4,24 +4,16 @@ using UnityEngine;
 
 namespace Game
 {
-    public class GhostAI : MonoBehaviour, IEnemyAI
+    public class GhostAI : EnemyAI
     {
         public float speed = 2.0f;
         public float awareness = 8.0f;
-        public Rigidbody2D rb;
-
-        public Transform player;
-        public Vector3 startPos;
         private Vector2 direction;
 
-
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-            startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            GameManager.instance.AddEnemyToList(this);
-            rb = gameObject.GetComponent<Rigidbody2D>();
+            base.Start();
         }
 
         // Update is called once per frame
@@ -47,19 +39,10 @@ namespace Game
         }
         void FixedUpdate()
         {
-            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+            // rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
         }
 
-        public void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log(collision.transform.tag);
-            if (collision.transform.tag == "Player")
-            {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
-            }
-        }
-
-        public void Restart()
+        public override void Restart()
         {
             transform.position = startPos;
         }
