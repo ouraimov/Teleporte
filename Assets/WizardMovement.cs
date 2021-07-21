@@ -4,14 +4,17 @@ using UnityEngine;
 
 namespace Game
 {
-    public class GhostAI : MonoBehaviour, IEnemyAI
+    public class WizardMovement : MonoBehaviour, IEnemyAI
     {
-        public float speed = 2.0f;
-        public float awareness = 8.0f;
-        public Rigidbody2D rb;
+        //[SerializeField]
 
-        public Transform player;
-        public Vector3 startPos;
+        private float speed = 2.0f;
+        private Vector3 pos1 = new Vector3(0,0,0);
+        private Vector3 pos2 = new Vector3(0, 0, 0);
+
+
+        private Rigidbody2D rb;
+        private Transform player;
         private Vector2 direction;
 
 
@@ -19,7 +22,7 @@ namespace Game
         void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            startPos = transform.position;
+            // pos1 = transform.position;
             GameManager.instance.AddEnemyToList(this);
             rb = GetComponent<Rigidbody2D>();
         }
@@ -36,9 +39,9 @@ namespace Game
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
             }
-            if(dist <= awareness)
+            if (dist <= 6)
             {
-                direction = new Vector2((player.position.x - transform.position.x) / dist , (player.position.y - transform.position.y) /dist);
+                direction = new Vector2((player.position.x - transform.position.x) / dist, (player.position.y - transform.position.y) / dist);
             }
             else
             {
@@ -61,7 +64,7 @@ namespace Game
 
         public void Restart()
         {
-            transform.position = startPos;
+            transform.position = pos1;
         }
     }
 }
