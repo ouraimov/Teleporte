@@ -4,15 +4,23 @@ using UnityEngine;
 
 namespace Game
 {
-    public class SkeletonAI : EnemyAI
+    /*
+    * Description: This script handles enemies that rotate in place to look at the player
+    * 
+    */
+    public class EnemyRotate : MonoBehaviour
     {
-        public Vector2 playerPos;
-        public float startRot;
+        private Transform player;
+        private Rigidbody2D rigidBody;
+        private Vector2 playerPos;
+        private float startRot;
 
         // Start is called before the first frame update
-        protected override void Start()
+        void Start()
         {
-            base.Start();
+            rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+
             startRot = rigidBody.rotation;
         }
 
@@ -20,8 +28,8 @@ namespace Game
         void Update()
         {
             playerPos = player.position;
-
         }
+
         void FixedUpdate()
         {
             Vector2 lookDir = playerPos - rigidBody.position;
@@ -29,9 +37,5 @@ namespace Game
             rigidBody.rotation = angle + startRot;
         }
 
-        public override void Restart()
-        {
-            rigidBody.rotation = startRot;
-        }
     }
 }

@@ -43,8 +43,10 @@ GameObject:
   - component: {fileID: 1087926919429834710}
   - component: {fileID: 1087926919429834705}
   - component: {fileID: 1087926919429834709}
+  - component: {fileID: 1642915362169359825}
+  - component: {fileID: 9218659434535837585}
   m_Layer: 0
-  m_Name: bow
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +170,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7459075f067514cb710417750c72dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   player: {fileID: 0}
+  rigidBody: {fileID: 0}
   playerPos: {x: 0, y: 0}
-  startPos: 0
+  startRot: 0
+--- !u!114 &1642915362169359825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087926919429834704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c8fe058bf895f4a94c59386a16892f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  arrowPrefab: {fileID: 2441191942943709707, guid: 8bf921d98a6950446af4e6cfacb179ee,
+    type: 3}
+  arrowForce: 5
+  shootCoolDown: 4
+--- !u!114 &9218659434535837585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087926919429834704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd9874e16a9148e0a99648824a9ceb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  rigidBody: {fileID: 0}
+  isKillable: 0

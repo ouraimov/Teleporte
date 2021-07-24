@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 3736255390768952848}
   - component: {fileID: 7074981653394617100}
   - component: {fileID: 5382031383361377067}
-  - component: {fileID: -128274290830791219}
   - component: {fileID: 6924982256337680891}
   - component: {fileID: 3422809377081115661}
+  - component: {fileID: 3480327276703213325}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Orc2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,22 +155,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &-128274290830791219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3736255390768952850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9eb6ac77ca73ba48a2f8882a13420b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
-  rigidBody: {fileID: 0}
-  awareness: 8
 --- !u!50 &6924982256337680891
 Rigidbody2D:
   serializedVersion: 4
@@ -205,6 +189,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
   rigidBody: {fileID: 0}
   awareness: 8
+--- !u!114 &3480327276703213325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736255390768952850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd9874e16a9148e0a99648824a9ceb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  rigidBody: {fileID: 0}
+  isKillable: 1

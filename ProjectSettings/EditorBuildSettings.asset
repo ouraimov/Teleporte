@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: 57fe9d493e4236844a3028b3eed546e5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstLevel Polish.unity
     guid: 65e56b0dbd0d4404497f83167a286ab5
   m_configObjects: {}

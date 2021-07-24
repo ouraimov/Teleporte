@@ -14,7 +14,7 @@ namespace Game
         public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
         public static Transform player = null;
 
-        private List<EnemyAI> enemies;                          //List of all Enemy units, used to issue them move commands.
+        private List<Enemy> enemies;                          //List of all Enemy units, used to issue them move commands.
         //private bool enemiesMoving;						    //Boolean to check if enemies are moving.
         private bool doingSetup = true;                         //Boolean to check if we're setting up board, prevent Player from moving during setup.
 
@@ -45,7 +45,7 @@ namespace Game
             DontDestroyOnLoad(deathUI);
 
             //Assign enemies to a new List of Enemy objects.
-            enemies = new List<EnemyAI>();
+            enemies = new List<Enemy>();
 
             playerObj = GameObject.FindGameObjectWithTag("Player");
             player = playerObj.transform;
@@ -81,14 +81,14 @@ namespace Game
         }
 
         //Call this to add the passed in Enemy to the List of Enemy objects.
-        public void AddEnemyToList(EnemyAI script)
+        public void AddEnemyToList(Enemy script)
         {
             //Add Enemy to List enemies.
             enemies.Add(script);
         }
         public void RestartEnemies()
         {
-            foreach (EnemyAI i in enemies)
+            foreach (Enemy i in enemies)
             {
                 i.Restart();
             }

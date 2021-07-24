@@ -5,15 +5,16 @@ using UnityEngine;
 namespace Game
 {
     /*
-    * Description: The script handles enemy movement and follow behavior
+    * Description: This script handles enemies that follow the player
     * 
     */
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyFollow : MonoBehaviour
     {
-        public Transform player;
-        public Vector3 startPos;
-        public Rigidbody2D rigidBody;
-        public float awareness = 8.0f;
+        [SerializeField]
+        private float awareness = 8.0f;
+
+        private Transform player;
+        private Rigidbody2D rigidBody;
         private UnityEngine.AI.NavMeshAgent agent;
 
         // Start is called before the first frame update
@@ -25,8 +26,6 @@ namespace Game
             agent.destination = transform.position;
 
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            // GameManager.instance.AddEnemyToList(this);
             rigidBody = gameObject.GetComponent<Rigidbody2D>();
         }
 

@@ -4,16 +4,19 @@ using UnityEngine;
 
 namespace Game
 {
-    public class GhostAI : EnemyAI
+    public class GhostMovement : MonoBehaviour
     {
         public float speed = 2.0f;
         public float awareness = 8.0f;
         private Vector2 direction;
+        public Transform player;
+        public Rigidbody2D rigidBody;
 
         // Start is called before the first frame update
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            rigidBody = gameObject.GetComponent<Rigidbody2D>();
         }
 
         // Update is called once per frame
@@ -40,11 +43,6 @@ namespace Game
         void FixedUpdate()
         {
             // rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-        }
-
-        public override void Restart()
-        {
-            transform.position = startPos;
         }
     }
 }
