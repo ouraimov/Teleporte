@@ -8984,6 +8984,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3736255390768952850, guid: 8eb25b763ca029f4da34baf578b12faf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 8eb25b763ca029f4da34baf578b12faf,
         type: 3}
       propertyPath: m_RootOrder
@@ -10221,6 +10226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Orc2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736255390768952850, guid: 1ebb41c18f19bf1408a227fddd8f36bd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 1ebb41c18f19bf1408a227fddd8f36bd,
         type: 3}
@@ -16317,7 +16327,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: ab209fbda6f61124f8224bc6e206e26c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8332be4d99dcc534887c4caef650dbfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16375,6 +16385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc3
       objectReference: {fileID: 0}
+    - target: {fileID: 3736255390768952850, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533,
         type: 3}
       propertyPath: m_RootOrder
@@ -16388,7 +16403,7 @@ PrefabInstance:
     - target: {fileID: 3736255390768952854, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28
+      value: -26.52
       objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 5140dbc0c5a3ba54ca1fb7d9c33e1533,
         type: 3}
@@ -17496,6 +17511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc1
       objectReference: {fileID: 0}
+    - target: {fileID: 3736255390768952850, guid: 8eb25b763ca029f4da34baf578b12faf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 8eb25b763ca029f4da34baf578b12faf,
         type: 3}
       propertyPath: m_RootOrder
@@ -17504,7 +17524,7 @@ PrefabInstance:
     - target: {fileID: 3736255390768952854, guid: 8eb25b763ca029f4da34baf578b12faf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -1.23
       objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 8eb25b763ca029f4da34baf578b12faf,
         type: 3}
@@ -18796,6 +18816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Orc2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736255390768952850, guid: 1ebb41c18f19bf1408a227fddd8f36bd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3736255390768952854, guid: 1ebb41c18f19bf1408a227fddd8f36bd,
         type: 3}

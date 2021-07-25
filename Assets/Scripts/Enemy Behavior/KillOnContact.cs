@@ -38,7 +38,7 @@ namespace Game
                 Enemy enemy = collision.transform.gameObject.GetComponent<Enemy>();
                 if (enemy.isKillable)
                 {
-                    collision.transform.gameObject.GetComponent<Enemy>().Restart();
+                    collision.transform.gameObject.GetComponent<Enemy>().Kill();
                 }
             }
             if (isConsumed)
