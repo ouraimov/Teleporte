@@ -73,7 +73,6 @@ namespace Game
             agent.destination = transform.position;
             rend.enabled = false;
             col.enabled = false;
-            print("yup");
         }
     }
 }

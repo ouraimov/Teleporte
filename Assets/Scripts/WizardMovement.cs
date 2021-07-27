@@ -46,12 +46,11 @@ namespace Game
                 // When Wizard arrives at next waypoint
                 if (Vector2.Distance(transform.position, waypoints[waypointIndex].transform.position) < .001f)
                 {
-                    if ((waypointIndex == 8 && player.position.x < 9.24) || (waypointIndex == 10 && player.position.x < 14.2))
+                    if ((waypointIndex == 8 && player.position.x < 9.24) || (waypointIndex == 10 && player.position.x < 14.2) || (waypointIndex == 6 && player.position.x < 3.8))
                     {
-                        print("stop");
                         return;
                     }
-                    if (waypointIndex == 6 || waypointIndex == 10)
+                    if (waypointIndex == 6 || waypointIndex == 10 || waypointIndex == 13)
                     {
                         waypointIndex += 1;
                         transform.position = waypoints[waypointIndex].transform.position;
