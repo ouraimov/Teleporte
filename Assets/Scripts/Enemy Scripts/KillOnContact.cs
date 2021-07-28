@@ -30,15 +30,16 @@ namespace Game
         {
             Debug.Log(collision.transform.tag);
             Enemy enemy = collision.transform.gameObject.GetComponent<Enemy>();
+            Enemy self = this.gameObject.GetComponent<Enemy>();
             if (collision.transform.tag == "Player")
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
             } 
-            else if(enemy != null)
+            else if(enemy != null && self == null)
             {
                 if (enemy.isKillable)
                 {
-                    collision.transform.gameObject.GetComponent<Enemy>().Kill();
+                    collision.gameObject.GetComponent<Enemy>().Kill();
                 }
             }
             if (isConsumed)
