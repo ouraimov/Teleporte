@@ -175,7 +175,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1726021435460610292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53abcdefebe9ff44dbf01745a763b922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  rigidBody: {fileID: 0}
   awareness: 8
 --- !u!114 &7657299712463873353
 MonoBehaviour:
@@ -203,6 +201,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd9874e16a9148e0a99648824a9ceb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0, z: 0}
-  rigidBody: {fileID: 0}
   isKillable: 1

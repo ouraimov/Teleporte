@@ -29,13 +29,13 @@ namespace Game
         private void OnCollisionEnter2D(Collision2D collision)
         {
             Debug.Log(collision.transform.tag);
+            Enemy enemy = collision.transform.gameObject.GetComponent<Enemy>();
             if (collision.transform.tag == "Player")
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
             } 
-            else if(collision.transform.tag == "Enemy")
+            else if(enemy != null)
             {
-                Enemy enemy = collision.transform.gameObject.GetComponent<Enemy>();
                 if (enemy.isKillable)
                 {
                     collision.transform.gameObject.GetComponent<Enemy>().Kill();

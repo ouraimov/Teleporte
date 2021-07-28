@@ -17,16 +17,13 @@ namespace Game
         [SerializeField]
         private AudioSource teleportSource;
 
-
         private Transform player;
         private int waypointIndex = 0;
-
 
         // Start is called before the first frame update
         void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            //transform.position = waypoints[waypointIndex].transform.position;
         }
 
         // Update is called once per frame
@@ -40,10 +37,12 @@ namespace Game
                 // When Wizard arrives at next waypoint
                 if (Vector2.Distance(transform.position, waypoints[waypointIndex].transform.position) < .001f)
                 {
+                    //Waypoints where wizard waits for player
                     if ((waypointIndex == 8 && player.position.x < 9.24) || (waypointIndex == 10 && player.position.x < 14.2) || (waypointIndex == 6 && player.position.x < 3.8))
                     {
                         return;
                     }
+                    //Waypoints where wizard teleports
                     if (waypointIndex == 6 || waypointIndex == 10 || waypointIndex == 13)
                     {
                         waypointIndex += 1;
@@ -59,12 +58,6 @@ namespace Game
                 GameObject bubble = transform.GetChild(1).gameObject;
                 bubble.SetActive(false);
             }
-        }
-
-        public void Restart()
-        {
-            transform.position = waypoints[waypointIndex].transform.position;
-            waypointIndex = 0;
         }
     }
 }
