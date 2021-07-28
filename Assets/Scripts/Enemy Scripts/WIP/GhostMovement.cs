@@ -29,7 +29,7 @@ namespace Game
             float dist = (player.position - transform.position).magnitude;
             if (dist <= 0.5)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
             }
             if(dist <= awareness)
             {

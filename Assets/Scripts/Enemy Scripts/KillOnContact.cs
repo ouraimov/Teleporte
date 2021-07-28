@@ -31,7 +31,7 @@ namespace Game
             Debug.Log(collision.transform.tag);
             if (collision.transform.tag == "Player")
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Restart();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
             } 
             else if(collision.transform.tag == "Enemy")
             {
