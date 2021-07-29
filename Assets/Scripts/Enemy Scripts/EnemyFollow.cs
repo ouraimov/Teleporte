@@ -42,14 +42,5 @@ namespace Game
                 agent.destination = transform.position;
             }
         }
-
-        public void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log(collision.transform.tag);
-            if (collision.transform.tag == "Player")
-            {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
-            }
-        }
     }
 }
