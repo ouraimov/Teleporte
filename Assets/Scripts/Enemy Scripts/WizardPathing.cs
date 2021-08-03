@@ -20,16 +20,21 @@ namespace Game
         private Transform player;
         private int waypointIndex = 0;
 
+        private float dissolveAmount = 0.0f;
+        private float teleportCooldown = 3.0f;
+        private Material material;
+
         // Start is called before the first frame update
         void Start()
         {
+            material = GetComponent<Renderer>().sharedMaterial;
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            //
             if (waypointIndex <= waypoints.Length - 1)
             {
                 // Move Wizard from current waypoint to the next one
@@ -48,7 +53,8 @@ namespace Game
                         waypointIndex += 1;
                         transform.position = waypoints[waypointIndex].transform.position;
                         teleportSource.Play();
-
+                        dissolveAmount = 1.00f;
+                        teleportCooldown = 0f;
                     }
                     waypointIndex += 1;
                 }
@@ -58,6 +64,9 @@ namespace Game
                 GameObject bubble = transform.GetChild(1).gameObject;
                 bubble.SetActive(false);
             }
+            material.SetFloat("Vector1_D926CC99", Mathf.Lerp(dissolveAmount, 0.0f, teleportCooldown));
+            teleportCooldown += Time.deltaTime;
+
         }
     }
 }
