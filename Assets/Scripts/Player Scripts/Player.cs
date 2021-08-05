@@ -49,7 +49,7 @@ namespace Game
             }
         }
 
-        public void gainLife()
+        public void GainLife()
         {
             lives++;
             hearts[lives - 1].SetActive(true);

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6924982256337680891}
   - component: {fileID: 3422809377081115661}
   - component: {fileID: 3480327276703213325}
+  - component: {fileID: 2884925957841626411}
   m_Layer: 0
   m_Name: Orc2
   m_TagString: Untagged
@@ -202,3 +203,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isKillable: 1
+--- !u!114 &2884925957841626411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736255390768952850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858d57736232fe844a6e8338bd088616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConsumed: 0
