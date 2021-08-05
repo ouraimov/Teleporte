@@ -7,12 +7,21 @@ namespace Game
     public class Player : MonoBehaviour
     {
         public int lives = 5;
+        public GameObject[] hearts;
         public Vector3 startPos;
 
         // Start is called before the first frame update
         void Start()
         {
             startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            foreach (GameObject heart in hearts)
+            {
+                heart.SetActive(false);
+            }
+            for (int i = 0; i < lives; i++)
+            {
+                hearts[i].SetActive(true);
+            }
         }
 
         // Update is called once per frame
@@ -26,6 +35,7 @@ namespace Game
 
         public void Restart()
         {
+            hearts[lives-1].SetActive(false);
             lives--;
             if (lives > 0)
             {
@@ -37,6 +47,12 @@ namespace Game
             {
                 GameManager.instance.GameOver();
             }
+        }
+
+        public void gainLife()
+        {
+            lives++;
+            hearts[lives - 1].SetActive(true);
         }
     }
 }
