@@ -19,7 +19,9 @@ namespace Game
         private bool doingSetup = true;                         //Boolean to check if we're setting up board, prevent Player from moving during setup.
 
         private GameObject playerObj;
+        public GameObject canvas;
         public GameObject completeUI;
+        public GameObject levelUI;
         public GameObject deathUI;
 
         private bool gameMove;
@@ -41,8 +43,7 @@ namespace Game
 
             //Sets this to not be destroyed when reloading scene
             DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(completeUI);
-            DontDestroyOnLoad(deathUI);
+            DontDestroyOnLoad(canvas);
 
             //Assign enemies to a new List of Enemy objects.
             enemies = new List<Enemy>();
@@ -106,7 +107,12 @@ namespace Game
         {
             gameMove = false;
             completeUI.SetActive(true);
+        }
+        public void LevelWin()
+        {
             
+            gameMove = false;
+            levelUI.SetActive(true);
         }
 
         public bool GameIsOver()

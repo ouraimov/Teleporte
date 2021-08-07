@@ -11,7 +11,7 @@ namespace Game
 
         private void OnTriggerEnter2D()
         {
-            gameManager.GameWin();
+            gameManager.LevelWin();
         }
     }
 }
