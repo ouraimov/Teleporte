@@ -19,7 +19,7 @@ namespace Game
         private Jiggle jiggle;
         [SerializeField]
         private Sprite openSprite;
-        [SerializeField]
+        [SerializeField] 
         private SpriteRenderer spriteRenderer;
 
         private bool closed = true;

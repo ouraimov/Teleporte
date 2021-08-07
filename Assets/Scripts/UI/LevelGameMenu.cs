@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Game
 {
-    public class InGameMenu : MonoBehaviour
+    public class LevelGameMenu : MonoBehaviour
     {
 
         public void PlayAgain()
@@ -13,7 +13,12 @@ namespace Game
             GameManager.instance.deathUI.SetActive(false);
             GameManager.instance.completeUI.SetActive(false);
             SceneManager.LoadScene("Tutorial");
-            
+        }
+        public void Continue()
+        {
+            GameManager.instance.deathUI.SetActive(false);
+            GameManager.instance.completeUI.SetActive(false);
+            SceneManager.LoadScene("Omar's Testing Ground");
         }
 
         public void Quit()

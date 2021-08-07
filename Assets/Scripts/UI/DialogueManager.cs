@@ -65,7 +65,7 @@ namespace Game
 
         void EndDialogue()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Tutorial");
         }
     }
 }

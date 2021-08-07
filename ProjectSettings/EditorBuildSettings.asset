@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: 57fe9d493e4236844a3028b3eed546e5
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 4ae5b27ca5ad6d3499b123221445c09b
+  - enabled: 1
+    path: Assets/Scenes/Omar's Testing Ground.unity
+    guid: 28d3c0ac0770b144f8ae778002ee3798
   - enabled: 0
     path: Assets/Scenes/FirstLevel Polish.unity
     guid: 65e56b0dbd0d4404497f83167a286ab5
