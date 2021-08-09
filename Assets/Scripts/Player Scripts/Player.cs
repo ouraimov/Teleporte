@@ -14,6 +14,13 @@ namespace Game
         void Start()
         {
             startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            SetLives(lives);
+        }
+        public void SetLives(int l)
+        {
+            
+            lives = l;
+            print(lives);
             foreach (GameObject heart in hearts)
             {
                 heart.SetActive(false);

@@ -17,10 +17,7 @@ namespace Game
         }
         public void Continue()
         {
-            GameManager.instance.deathUI.SetActive(false);
-            GameManager.instance.completeUI.SetActive(false);
-            GameManager.instance.levelUI.SetActive(false);
-            SceneManager.LoadScene("Omar's Testing Ground");
+            GameManager.instance.NextLevel();
         }
 
         public void Quit()

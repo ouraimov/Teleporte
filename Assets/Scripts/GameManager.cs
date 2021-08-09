@@ -14,6 +14,7 @@ namespace Game
         public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
         public static Transform player = null;
 
+        [SerializeField]
         private List<Enemy> enemies;                          //List of all Enemy units, used to issue them move commands.
         //private bool enemiesMoving;						    //Boolean to check if enemies are moving.
         private bool doingSetup = true;                         //Boolean to check if we're setting up board, prevent Player from moving during setup.
@@ -25,6 +26,8 @@ namespace Game
         public GameObject deathUI;
 
         private bool gameMove;
+
+        private int scene = 1;
 
         //Awake is always called before any Start functions
         void Awake()
@@ -49,6 +52,7 @@ namespace Game
             enemies = new List<Enemy>();
 
             playerObj = GameObject.FindGameObjectWithTag("Player");
+            //DontDestroyOnLoad(playerObj);
             player = playerObj.transform;
 
             //Call the InitGame function to initialize the first level 
@@ -72,6 +76,8 @@ namespace Game
         //Update is called every frame.
         void Update()
         {
+
+
             //Check that playersTurn or enemiesMoving or doingSetup are not currently true.
             //if(playersTurn || enemiesMoving || doingSetup)
             if (doingSetup)
@@ -79,6 +85,7 @@ namespace Game
                 //If any of these are true, return and do not start MoveEnemies.
                 return;
 
+            
         }
 
         //Call this to add the passed in Enemy to the List of Enemy objects.
@@ -108,11 +115,25 @@ namespace Game
             gameMove = false;
             completeUI.SetActive(true);
         }
-        public void LevelWin()
+        public void LevelWinUI()
         {
-            
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SetLives(2);
             gameMove = false;
             levelUI.SetActive(true);
+        }
+        public void NextLevel()
+        {
+            int lives = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().lives;
+            deathUI.SetActive(false);
+            completeUI.SetActive(false);
+            levelUI.SetActive(false);
+            enemies = new List<Enemy>();
+            scene++;
+            SceneManager.LoadSceneAsync("Omar's Testing Ground");
+            print("hi");
+            canvas.SetActive(true);
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SetLives(3);
+
         }
 
         public bool GameIsOver()
