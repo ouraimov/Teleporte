@@ -65,6 +65,14 @@ namespace Game
 
             return true;
         }
+        public bool TeleportReady()
+        {
+            if (teleportCooldown >= 2f)
+            {
+                return true;
+            }
+            return false;
+        }
 
         private void MoveTeleport()
         {

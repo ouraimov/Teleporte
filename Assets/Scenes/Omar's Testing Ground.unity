@@ -9133,6 +9133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733484953870468804, guid: 2e2fb6b23ea7b9042b09729c40111e47,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733484953870468804, guid: 2e2fb6b23ea7b9042b09729c40111e47,
+        type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -9146,6 +9151,11 @@ PrefabInstance:
       propertyPath: teleportSource
       value: 
       objectReference: {fileID: 1988846865}
+    - target: {fileID: 8277236391659667458, guid: 2e2fb6b23ea7b9042b09729c40111e47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
         type: 3}
       propertyPath: hearts.Array.size
