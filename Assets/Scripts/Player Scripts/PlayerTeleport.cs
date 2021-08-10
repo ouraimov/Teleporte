@@ -13,10 +13,13 @@ namespace Game
         private bool teleportedLastFrame;
         private const float teleportDistance = 3.0f;
         private float teleportCooldown = 3.0f;
+        private float cooldownTime = 2f;
         private float dissolveAmount = 0.0f;
         private Vector2 direction;
         private Material material;
 
+        
+        private Animator animator;
         [SerializeField]
         private AudioSource teleportSource;
         [SerializeField]
@@ -26,6 +29,7 @@ namespace Game
         void Start()
         {
             material = GetComponent<Renderer>().sharedMaterial;
+            animator = transform.GetChild(1).GetComponent<Animator>();
 
             teleport = false;
             teleportedLastFrame = false;
@@ -37,12 +41,13 @@ namespace Game
             direction = playerMovement.GetDirection();
             teleport = Input.GetKey(KeyCode.Space);
 
-            if (teleport && !teleportedLastFrame && (teleportCooldown >= 2f) && CanTeleport())
+            if (teleport && !teleportedLastFrame && (teleportCooldown >= cooldownTime) && CanTeleport())
             {
                 dissolveAmount = 1.00f;
                 MoveTeleport();
                 teleport = false;
                 teleportCooldown = 0f;
+                Animate();
             }
 
             material.SetFloat("Vector1_D926CC99", Mathf.Lerp(dissolveAmount, 0.0f, teleportCooldown));
@@ -78,6 +83,11 @@ namespace Game
         {
             transform.Translate(direction.normalized * teleportDistance);
             teleportSource.Play();
+        }
+
+        private void Animate()
+        {
+            animator.SetTrigger("StartCooldown");
         }
 
         public void Restart()
