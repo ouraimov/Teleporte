@@ -5,8 +5,15 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(Jiggle))]
-    public class HealChest : MonoBehaviour
+    public class Chest : MonoBehaviour
     {
+        [SerializeField]
+        private bool life = true;
+        [SerializeField]
+        private bool summon = false;
+        [SerializeField]
+        private GameObject summonPrefab;
+
         [SerializeField]
         private float awareness = 2.0f;
         [SerializeField]
@@ -81,8 +88,20 @@ namespace Game
             closed = false;
             jiggle.setJiggle(false);
             jiggle.Restart();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GainLife();
+            Activate();
             spriteRenderer.sprite = openSprite;
+        }
+        public void Activate()
+        {
+            if (life)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GainLife();
+            }
+            if (summon)
+            {
+                Instantiate(summonPrefab, transform.position, Quaternion.identity);
+            }
+            
         }
     }
 }

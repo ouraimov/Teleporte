@@ -6,20 +6,25 @@ namespace Game
 {
     public class TeleportMarker : MonoBehaviour
     {
-        private SpriteRenderer spriteRenderer;
+
+        private Animator animator;
         private PlayerTeleport teleporter;
+        private bool ready = true;
+
 
         // Start is called before the first frame update
         void Start()
         {
             teleporter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerTeleport>();
-            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
+            ready = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-            spriteRenderer.enabled = teleporter.TeleportReady();
+            animator.enabled = ready;
+            
         }
     }
 }

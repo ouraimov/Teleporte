@@ -131,6 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0214fb4f1b7f341ab6b93d5a4b0690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 1
+  summon: 1
+  summonPrefab: {fileID: 9137360880125478838, guid: 2169b8c04430d174b9ec8eea3d8471b3,
+    type: 3}
   awareness: 2
   time: 7
   startingSpeed: 0.2
