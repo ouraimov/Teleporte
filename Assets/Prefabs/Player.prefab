@@ -112,13 +112,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3884533590401229239}
   - component: {fileID: 8277236391395964145}
-  - component: {fileID: 9003819120586560475}
   - component: {fileID: 8277236391395964158}
   - component: {fileID: 8132216055581296587}
   - component: {fileID: 8277236391395964159}
   - component: {fileID: 8277236391395964156}
   - component: {fileID: 6733484953870468804}
   - component: {fileID: 459312872}
+  - component: {fileID: 4668251202825966169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -193,32 +193,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9003819120586560475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3884533590401229238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a334649b5593b42b7c5b2c6be1f9a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 5
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
 --- !u!114 &8277236391395964158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +373,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4668251202825966169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884533590401229238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd9874e16a9148e0a99648824a9ceb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isKillable: 0
 --- !u!1 &8277236391659667458
 GameObject:
   m_ObjectHideFlags: 0

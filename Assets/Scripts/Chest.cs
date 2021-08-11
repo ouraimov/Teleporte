@@ -95,7 +95,7 @@ namespace Game
         {
             if (life)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().GainLife();
+                GameManager.instance.GainLife();
             }
             if (summon)
             {
