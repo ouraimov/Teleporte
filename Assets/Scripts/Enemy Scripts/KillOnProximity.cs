@@ -30,7 +30,7 @@ namespace Game
             float dist = (player.position - transform.position).magnitude;
             if (dist <= proximity)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
+                GameManager.instance.KillPlayer();
                 if (isConsumed)
                 {
                     Destroy(gameObject);

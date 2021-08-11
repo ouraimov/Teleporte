@@ -14,18 +14,6 @@ namespace Game
         [SerializeField]
         private bool isConsumed = false;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
             Debug.Log(collision.transform.tag);
@@ -33,7 +21,7 @@ namespace Game
             Enemy self = this.gameObject.GetComponent<Enemy>();
             if (collision.transform.tag == "Player")
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Restart();
+                GameManager.instance.KillPlayer();
             } 
             else if(enemy != null && self == null)
             {

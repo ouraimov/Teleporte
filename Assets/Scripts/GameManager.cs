@@ -88,6 +88,11 @@ namespace Game
             
         }
 
+        public void KillPlayer()
+        {
+            RestartEnemies();
+        }
+
         //Call this to add the passed in Enemy to the List of Enemy objects.
         public void AddEnemyToList(Enemy script)
         {
