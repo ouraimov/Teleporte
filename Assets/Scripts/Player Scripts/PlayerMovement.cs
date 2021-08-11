@@ -14,7 +14,7 @@ namespace Game
         // Start is called before the first frame update
         void Start()
         {
-
+            GameManager.instance.SetPlayer(this.gameObject);
         }
 
         // Update is called once per frame

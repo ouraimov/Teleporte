@@ -12,7 +12,6 @@ namespace Game
         public float levelStartDelay = 2f;                      //Time to wait before starting level, in seconds.
 
         public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-        public static Transform player = null;
 
         [SerializeField]
         private List<Enemy> enemies;                          //List of all Enemy units, used to issue them move commands.
@@ -53,9 +52,6 @@ namespace Game
 
             //Assign enemies to a new List of Enemy objects.
             enemies = new List<Enemy>();
-
-            playerObj = GameObject.FindGameObjectWithTag("Player");
-            player = playerObj.transform;
 
             //Call the InitGame function to initialize the first level 
             InitGame();
@@ -155,7 +151,11 @@ namespace Game
             levelUI.SetActive(false);
             enemies.Clear();
             SceneManager.LoadSceneAsync("Omar's Testing Ground");
-            playerObj = GameObject.FindGameObjectWithTag("Player");
+        }
+        //allows the player object to assign itself to the manager on scene chaneg
+        public void SetPlayer(GameObject player)
+        {
+            playerObj = player;
         }
 
         public bool GameIsOver()

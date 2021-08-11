@@ -95,6 +95,7 @@ namespace Game
             dissolveAmount = 1.00f;
             teleportSource.Play();
             teleportCooldown = 0.0f;
+            Animate();
         }
 
     }
