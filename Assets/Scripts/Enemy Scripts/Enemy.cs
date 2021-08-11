@@ -23,6 +23,7 @@ namespace Game
 
         public virtual void Restart()
         {
+            gameObject.SetActive(true);
             transform.position = startPos;
         }
 
