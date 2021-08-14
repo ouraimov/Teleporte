@@ -10,7 +10,7 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
         public float levelStartDelay = 2f;                      //Time to wait before starting level, in seconds.
-
+        private bool gameMove;
         public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
         [SerializeField]
@@ -18,16 +18,21 @@ namespace Game
         //private bool enemiesMoving;						    //Boolean to check if enemies are moving.
         private bool doingSetup = true;                         //Boolean to check if we're setting up board, prevent Player from moving during setup.
 
-        private GameObject playerObj;
+        //UI
         public GameObject canvas;
         public GameObject completeUI;
         public GameObject levelUI;
         public GameObject deathUI;
         [SerializeField]
         private GameObject[] hearts;
-        private int lives = 5;
+        
+        //player stats
+        private GameObject playerObj;
+        private int currentLives = 5;
+        private int maxLives = 5;
+        private float invincibility = 0f;
+        private bool loseInvincibility = false;
 
-        private bool gameMove;
 
         private int scene = 1;
 
@@ -68,31 +73,45 @@ namespace Game
             SetHearts();
 
             gameMove = true;
-            
-
         }
 
         //Update is called every frame.
         void Update()
         {
-
-
+            if (loseInvincibility)
+            {
+                invincibility -= Time.fixedDeltaTime;
+            }
             //Check that playersTurn or enemiesMoving or doingSetup are not currently true.
             //if(playersTurn || enemiesMoving || doingSetup)
             if (doingSetup)
 
                 //If any of these are true, return and do not start MoveEnemies.
                 return;
-
-            
         }
 
         public void KillPlayer()
         {
+            if (invincibility > 0)
+            {
+                loseInvincibility = true;
+                playerObj.GetComponent<PlayerTeleport>().Restart();
+                return;
+            }
+            loseInvincibility = false;
+            currentLives -= 1;
+            if (currentLives < 1)
+            {
+                GameOver();
+            }
             RestartEnemies();
-            lives -= 1;
             SetHearts();
             playerObj.GetComponent<PlayerTeleport>().Restart();
+        }
+
+        public void Invincible()
+        {
+            invincibility = 2f;
         }
 
         public void SetHearts()
@@ -101,14 +120,23 @@ namespace Game
             {
                 heart.SetActive(false);
             }
-            for (int i = 0; i < lives; i++)
+            for (int i = 0; i < currentLives; i++)
             {
                 hearts[i].SetActive(true);
             }
         }
         public void GainLife()
         {
-            lives += 1;
+            if (currentLives < maxLives)
+            {
+                currentLives += 1;
+            }
+            SetHearts();
+        }
+        public void IncreaseMaxLife()
+        {
+            maxLives += 1;
+            currentLives += 1;
             SetHearts();
         }
 

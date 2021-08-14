@@ -90,6 +90,11 @@ namespace Game
             animator.SetTrigger("StartCooldown");
         }
 
+        private void SetCooldownTime(float t)
+        {
+            cooldownTime = t;
+        }
+
         public void Restart()
         {
             dissolveAmount = 1.00f;

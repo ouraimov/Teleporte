@@ -25,8 +25,7 @@ namespace Game
         [SerializeField]
         private Jiggle jiggle;
         [SerializeField]
-        private Sprite openSprite;
-        [SerializeField] 
+        private Sprite openSprite; 
         private SpriteRenderer spriteRenderer;
 
         private bool closed = true;
@@ -38,6 +37,7 @@ namespace Game
         // Start is called before the first frame update
         void Start()
         {
+            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
             jiggleSpeed = startingSpeed;
         }
