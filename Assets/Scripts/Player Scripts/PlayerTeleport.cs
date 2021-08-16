@@ -39,7 +39,7 @@ namespace Game
         void Update()
         {
             direction = playerMovement.GetDirection();
-            teleport = Input.GetKey(KeyCode.Space);
+            teleport = Input.GetKeyUp(KeyCode.Space);
 
             if (teleport && !teleportedLastFrame && (teleportCooldown >= cooldownTime) && CanTeleport())
             {
@@ -55,7 +55,7 @@ namespace Game
             teleportCooldown += Time.deltaTime;
         }
 
-        private bool CanTeleport()
+        public bool CanTeleport()
         {
             Vector2 location = transform.position + (new Vector3(direction.normalized.x, direction.normalized.y, 0.0f) * teleportDistance);
 

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakTime: 20
-  proximity: 1
+  proximity: 0
   sprites:
   - {fileID: 1220356856035610383, guid: 41bb5e907022ee1438eeef58dcf0810b, type: 3}
   - {fileID: -908400615525780094, guid: 41bb5e907022ee1438eeef58dcf0810b, type: 3}

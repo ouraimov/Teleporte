@@ -532,78 +532,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8277236391395964145, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8277236391395964145, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8277236391395964145, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[7]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[8]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[9]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47,
-        type: 3}
-      propertyPath: hearts.Array.data[10]
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9003819120586560475, guid: 2e2fb6b23ea7b9042b09729c40111e47, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2fb6b23ea7b9042b09729c40111e47, type: 3}
 --- !u!1 &144580678
 GameObject:
@@ -13984,6 +13913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4339868251305063806, guid: 4da6b3bc9f7ff1d4987e233d932a5e5b,
         type: 3}
+      propertyPath: summon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339868251305063806, guid: 4da6b3bc9f7ff1d4987e233d932a5e5b,
+        type: 3}
       propertyPath: endingSpeed
       value: 0.6
       objectReference: {fileID: 0}
@@ -14083,12 +14017,12 @@ PrefabInstance:
     - target: {fileID: 9019145727515251469, guid: 953fc39ec59b6e0479b510d608f1f411,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.74
+      value: 10.51
       objectReference: {fileID: 0}
     - target: {fileID: 9019145727515251469, guid: 953fc39ec59b6e0479b510d608f1f411,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.76
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 9019145727515251469, guid: 953fc39ec59b6e0479b510d608f1f411,
         type: 3}
@@ -14134,6 +14068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Broken Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019145727515251505, guid: 953fc39ec59b6e0479b510d608f1f411,
+        type: 3}
+      propertyPath: proximity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953fc39ec59b6e0479b510d608f1f411, type: 3}

@@ -32,7 +32,7 @@ namespace Game
         void Update()
         {
             float dist = (player.position - transform.position).magnitude;
-            if (dist <= proximity || breakTime > 0)
+            if (dist <= proximity || currentTime > 0)
             {
                 BreakAway();
             }
