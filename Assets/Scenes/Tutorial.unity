@@ -2795,6 +2795,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 555288935536750360, guid: 5f20c6afc097aa1479e48861225ae41f,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 555288935536750360, guid: 5f20c6afc097aa1479e48861225ae41f,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 555288935536750360, guid: 5f20c6afc097aa1479e48861225ae41f,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 555288935536750360, guid: 5f20c6afc097aa1479e48861225ae41f,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 555288935536750361, guid: 5f20c6afc097aa1479e48861225ae41f,
         type: 3}
       propertyPath: m_RootOrder
@@ -14009,11 +14029,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9019145727515251468, guid: 953fc39ec59b6e0479b510d608f1f411,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9019145727515251469, guid: 953fc39ec59b6e0479b510d608f1f411,
         type: 3}
       propertyPath: m_RootOrder
@@ -14073,11 +14088,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Broken Floor
-      objectReference: {fileID: 0}
-    - target: {fileID: 9019145727515251505, guid: 953fc39ec59b6e0479b510d608f1f411,
-        type: 3}
-      propertyPath: proximity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953fc39ec59b6e0479b510d608f1f411, type: 3}

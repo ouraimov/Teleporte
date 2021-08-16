@@ -11,7 +11,7 @@ namespace Game
 
         private bool teleport;
         private bool teleportedLastFrame;
-        private const float teleportDistance = 3.0f;
+        private float teleportDistance = 3.0f;
         private float teleportCooldown = 3.0f;
         private float cooldownTime = 2f;
         private float dissolveAmount = 0.0f;
@@ -72,11 +72,7 @@ namespace Game
         }
         public bool TeleportReady()
         {
-            if (teleportCooldown >= 2f)
-            {
-                return true;
-            }
-            return false;
+            return (teleportCooldown >= cooldownTime);
         }
 
         private void MoveTeleport()
@@ -90,9 +86,18 @@ namespace Game
             animator.SetTrigger("StartCooldown");
         }
 
-        private void SetCooldownTime(float t)
+        public void SetCooldownTime(float t)
         {
             cooldownTime = t;
+            //animation
+        }
+        public void SetTeleportDistance(float t)
+        {
+            teleportDistance = t;
+        }
+        public float GetDistance()
+        {
+            return teleportDistance;
         }
 
         public void Restart()

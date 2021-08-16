@@ -24,7 +24,6 @@ namespace Game
         void Update()
         {
             animator.enabled = ready;
-            
         }
     }
 }

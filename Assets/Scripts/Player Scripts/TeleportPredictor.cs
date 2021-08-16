@@ -11,7 +11,6 @@ namespace Game
         private GameObject player;
         private PlayerMovement mover;
         private PlayerTeleport teleporter;
-        private const float teleportDistance = 3.0f;
         private Vector2 direction;
         private bool on = false;
 
@@ -39,7 +38,7 @@ namespace Game
             {
                 direction = mover.GetDirection();
                 transform.position = player.transform.position;
-                transform.Translate(direction.normalized * teleportDistance);
+                transform.Translate(direction.normalized * teleporter.GetDistance());
                 spriteRenderer.enabled = true;
             }
             else
