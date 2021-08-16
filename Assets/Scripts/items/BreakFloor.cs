@@ -13,7 +13,7 @@ namespace Game
         [SerializeField]
         private Sprite[] sprites;
         private SpriteRenderer spriteRenderer;
-        private BoxCollider2D collider;
+        private BoxCollider2D collision;
         private Transform player;
         private bool kill = false;
 
@@ -24,8 +24,8 @@ namespace Game
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            collider = gameObject.GetComponent<BoxCollider2D>();
-            collider.enabled = false;
+            collision = gameObject.GetComponent<BoxCollider2D>();
+            collision.enabled = false;
         }
 
         // Update is called once per frame
@@ -44,7 +44,7 @@ namespace Game
             if (currentTime > breakTime)
             {
                 spriteRenderer.sprite = sprites[2];
-                collider.enabled = true;
+                collision.enabled = true;
                 kill = true;
             }
             else if (currentTime > breakTime * 2 / 3)

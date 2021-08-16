@@ -30,6 +30,8 @@ namespace Game
         private GameObject playerObj;
         private int currentLives = 5;
         private int maxLives = 5;
+        [SerializeField]
+        private float invincibilityTime = 2.5f;
         private float invincibility = 0f;
         private bool loseInvincibility = false;
 
@@ -80,7 +82,12 @@ namespace Game
         {
             if (loseInvincibility)
             {
-                invincibility -= Time.fixedDeltaTime;
+                invincibility -= Time.deltaTime;
+                if (invincibility <= 0)
+                {
+                    loseInvincibility = false;
+                    playerObj.transform.GetChild(3).GetComponent<Shield>().Off();
+                }
             }
             //Check that playersTurn or enemiesMoving or doingSetup are not currently true.
             //if(playersTurn || enemiesMoving || doingSetup)
@@ -95,10 +102,9 @@ namespace Game
             if (invincibility > 0)
             {
                 loseInvincibility = true;
-                playerObj.GetComponent<PlayerTeleport>().Restart();
+                playerObj.transform.GetChild(3).GetComponent<Shield>().Blink();
                 return;
             }
-            loseInvincibility = false;
             currentLives -= 1;
             if (currentLives < 1)
             {
@@ -111,7 +117,8 @@ namespace Game
 
         public void Invincible()
         {
-            invincibility = 2f;
+            invincibility = invincibilityTime;
+            playerObj.transform.GetChild(3).GetComponent<Shield>().On();
         }
 
         public void SetHearts()
@@ -178,6 +185,7 @@ namespace Game
             completeUI.SetActive(false);
             levelUI.SetActive(false);
             enemies.Clear();
+            scene++;
             SceneManager.LoadSceneAsync("Omar's Testing Ground");
         }
         //allows the player object to assign itself to the manager on scene chaneg

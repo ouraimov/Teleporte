@@ -33,6 +33,8 @@ namespace Game
 
             teleport = false;
             teleportedLastFrame = false;
+
+            animator.speed = 2f / cooldownTime;
         }
 
         // Update is called once per frame
@@ -70,10 +72,6 @@ namespace Game
 
             return true;
         }
-        public bool TeleportReady()
-        {
-            return (teleportCooldown >= cooldownTime);
-        }
 
         private void MoveTeleport()
         {
@@ -89,7 +87,7 @@ namespace Game
         public void SetCooldownTime(float t)
         {
             cooldownTime = t;
-            //animation
+            animator.speed = 2f / t;
         }
         public void SetTeleportDistance(float t)
         {
