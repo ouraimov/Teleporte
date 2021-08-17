@@ -98,6 +98,15 @@ namespace Game
         {
             teleportDistance = t;
         }
+        public void DecreaseCooldownTime()
+        {
+            cooldownTime = cooldownTime / 2;
+            animator.speed = 2f / cooldownTime;
+        }
+        public void IncreaseTeleportDistance()
+        {
+            teleportDistance++;
+        }
         public float GetDistance()
         {
             return teleportDistance;

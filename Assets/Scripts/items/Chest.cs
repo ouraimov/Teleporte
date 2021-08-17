@@ -8,10 +8,6 @@ namespace Game
     public class Chest : MonoBehaviour
     {
         [SerializeField]
-        private bool life = true;
-        [SerializeField]
-        private bool summon = false;
-        [SerializeField]
         private GameObject summonPrefab;
 
         [SerializeField]
@@ -88,21 +84,35 @@ namespace Game
             closed = false;
             jiggle.setJiggle(false);
             jiggle.Restart();
-            Activate();
             spriteRenderer.sprite = openSprite;
+            Activate();
         }
         public void Activate()
         {
-            if (life)
+            int r = Random.Range(0, 5);
+            switch (r)
             {
-                GameManager.instance.IncreaseLife();
-                GameManager.instance.Invincible();
+                case 0:
+                    GameManager.instance.IncreaseLife();
+                    break;
+
+                case 1:
+                    GameManager.instance.Invincible();
+                    break;
+
+                case 2:
+                    player.GetComponent<PlayerTeleport>().DecreaseCooldownTime();
+                    break;
+
+                case 3:
+                    player.GetComponent<PlayerTeleport>().IncreaseTeleportDistance();
+                    break;
+
+                case 4:
+                    GameObject orc = Instantiate(summonPrefab, transform.position, Quaternion.identity);
+                    orc.GetComponent<EnemyFollow>().Stun();
+                    break;
             }
-            if (summon)
-            {
-                Instantiate(summonPrefab, transform.position, Quaternion.identity);
-            }
-            
         }
     }
 }

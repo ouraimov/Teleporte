@@ -55,7 +55,7 @@ Material:
     m_Floats:
     - Vector1_80494343: 25
     - Vector1_943B1244: 0.5
-    - Vector1_D926CC99: 0.08062285
+    - Vector1_D926CC99: 0.0617193
     - _EnableExternalAlpha: 0
     m_Colors:
     - Color_1B914216: {r: 1, g: 0.7216981, b: 0.7216981, a: 1}

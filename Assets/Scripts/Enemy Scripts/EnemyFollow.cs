@@ -16,6 +16,7 @@ namespace Game
         private Transform player;
         private Rigidbody2D rigidBody;
         private UnityEngine.AI.NavMeshAgent agent;
+        private float stunned = 0f;
 
         // Start is called before the first frame update
         void Start()
@@ -33,7 +34,11 @@ namespace Game
         void Update()
         {
             float dist = (player.position - transform.position).magnitude;
-            if (dist <= awareness)
+            if (stunned >= 0)
+            {
+                stunned -= Time.deltaTime;
+            }
+            if (dist <= awareness && stunned <= 0f)
             {
                 agent.destination = player.position;
             }
@@ -41,6 +46,10 @@ namespace Game
             {
                 agent.destination = transform.position;
             }
+        }
+        public void Stun()
+        {
+            stunned = 2f;
         }
     }
 }

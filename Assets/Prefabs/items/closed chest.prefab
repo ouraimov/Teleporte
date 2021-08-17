@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5e1bc6b866133534ab8e26f81a4b07c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,8 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0214fb4f1b7f341ab6b93d5a4b0690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
-  summon: 1
   summonPrefab: {fileID: 9137360880125478838, guid: 2169b8c04430d174b9ec8eea3d8471b3,
     type: 3}
   awareness: 2
@@ -141,4 +139,3 @@ MonoBehaviour:
   endingSpeed: 0.6
   jiggle: {fileID: 4339868251305063807}
   openSprite: {fileID: 21300000, guid: 99dec70c8db8eb442a0b64696fcede6d, type: 3}
-  spriteRenderer: {fileID: 4339868251305063801}
