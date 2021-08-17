@@ -95,7 +95,7 @@ namespace Game
         {
             if (life)
             {
-                GameManager.instance.GainLife();
+                GameManager.instance.IncreaseLife();
                 GameManager.instance.Invincible();
             }
             if (summon)

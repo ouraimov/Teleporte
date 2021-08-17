@@ -132,15 +132,12 @@ namespace Game
                 hearts[i].SetActive(true);
             }
         }
-        public void GainLife()
+        public void FullLife()
         {
-            if (currentLives < maxLives)
-            {
-                currentLives += 1;
-            }
+            currentLives = maxLives;
             SetHearts();
         }
-        public void IncreaseMaxLife()
+        public void IncreaseLife()
         {
             maxLives += 1;
             currentLives += 1;

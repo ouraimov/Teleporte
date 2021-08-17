@@ -40,7 +40,12 @@ namespace Game
         // Update is called once per frame
         void Update()
         {
-            direction = playerMovement.GetDirection();
+            Vector2 d = playerMovement.GetDirection();
+            if (d.magnitude > 0)
+            {
+                direction = d;
+            }
+             
             teleport = Input.GetKeyUp(KeyCode.Space);
 
             if (teleport && !teleportedLastFrame && (teleportCooldown >= cooldownTime) && CanTeleport())
@@ -96,6 +101,10 @@ namespace Game
         public float GetDistance()
         {
             return teleportDistance;
+        }
+        public Vector2 GetDirection()
+        {
+            return direction;
         }
 
         public void Restart()
