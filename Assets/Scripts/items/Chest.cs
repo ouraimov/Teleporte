@@ -8,6 +8,8 @@ namespace Game
     public class Chest : MonoBehaviour
     {
         [SerializeField]
+        private GameObject[] locations;
+        [SerializeField]
         private GameObject summonPrefab;
 
         [SerializeField]
@@ -36,6 +38,18 @@ namespace Game
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
             jiggleSpeed = startingSpeed;
+            chooseLocation();
+        }
+        private void chooseLocation()
+        {
+            List<Vector3> positions = new List<Vector3>();
+            positions.Add(transform.position);
+            foreach (GameObject i in locations)
+            {
+                positions.Add(i.transform.position);
+                i.SetActive(false);
+            }
+            transform.position = positions[Random.Range(0, positions.Count)];
         }
 
         // Update is called once per frame
