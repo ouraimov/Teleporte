@@ -36,7 +36,7 @@ namespace Game
         private bool loseInvincibility = false;
 
 
-        private int scene = 1;
+        private int scene = 0;
 
         //Awake is always called before any Start functions
         void Awake()
@@ -173,11 +173,20 @@ namespace Game
         }
         public void LevelWinUI()
         {
-            gameMove = false;
-            levelUI.SetActive(true);
+            if (scene > 0)
+            {
+                GameWin();
+            }
+            else
+            {
+                gameMove = false;
+                levelUI.SetActive(true);
+            }
+            
         }
         public void NextLevel()
         {
+            scene++;
             deathUI.SetActive(false);
             completeUI.SetActive(false);
             levelUI.SetActive(false);

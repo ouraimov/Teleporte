@@ -7,11 +7,9 @@ namespace Game
 {
     public class EndTrigger : MonoBehaviour
     {
-        public GameManager gameManager;
-
         private void OnTriggerEnter2D()
         {
-            gameManager.LevelWinUI();
+            GameManager.instance.LevelWinUI();
         }
     }
 }
